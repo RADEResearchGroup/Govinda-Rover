@@ -1,0 +1,5 @@
+@reboot /bin/stty -F /dev/ttyACM0 cs8 9600 ignbrk -brkint -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts >> /dev/null/ 2>&1
+
+@reboot  /usr/bin/php5 -f /var/www/temp.id/updater.php
+*/2 * * * *  /usr/bin/php5 -f /var/www/temp.id/updater.php
+*/1 * * * *  /bin/stty -F /dev/ttyACM0 cs8 9600 ignbrk -brkint -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts  >> /dev/null/ 2>&1
